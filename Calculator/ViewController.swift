@@ -13,14 +13,63 @@ class ViewController: UIViewController {
     @IBOutlet weak var displayLabel: UILabel!
     private var isFinishedTyping = true
     private var isDecimal = false
+    private var numbers = 0.0
+    private var symbol = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
     
+    func resetNumber() {
+        displayLabel.text = "0"
+        isFinishedTyping = true
+        isDecimal = false
+    }
+    
     @IBAction func functionButtonPressed(_ sender: UIButton) {
-        print(sender.currentTitle!)
+        if let function = sender.currentTitle {
+            switch function {
+            case "AC":
+                resetNumber()
+                numbers = 0.0
+            case "+/-":
+                displayLabel.text = String(Double(displayLabel.text!)! * -1)
+            case "%":
+                displayLabel.text = String(Double(displayLabel.text!)! * 0.01)
+            case "+", "-","÷","×":
+                numbers = Double(displayLabel.text!)!
+                resetNumber()
+                switch function {
+                case "+":
+                    symbol = "+"
+                case "-":
+                    symbol = "-"
+                case "÷":
+                    symbol = "÷"
+                case "×":
+                    symbol = "×"
+                default:
+                    print("Something's wrong from calculation")
+                }
+            case "=":
+                switch symbol {
+                case "+":
+                    numbers += Double(displayLabel.text!)!
+                case "-":
+                    numbers -= Double(displayLabel.text!)!
+                case "÷":
+                    numbers /= Double(displayLabel.text!)!
+                case "×":
+                    numbers *= Double(displayLabel.text!)!
+                default:
+                    print("Something's wrong from =")
+                }
+                displayLabel.text = String(format: "%.2f", numbers)
+            default:
+                print("Something")
+            }
+        }
     }
     
     
