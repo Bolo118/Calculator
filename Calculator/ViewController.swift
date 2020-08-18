@@ -10,11 +10,23 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var displayLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
+    
+    @IBAction func functionButtonPressed(_ sender: UIButton) {
+        print(sender.currentTitle!)
+    }
+    
 
+    @IBAction func numberButtonPressed(_ sender: UIButton) {
+        print(sender.currentTitle!)
+    }
+    
 
 }
 
