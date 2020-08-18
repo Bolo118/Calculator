@@ -9,9 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    @IBOutlet weak var displayLabel: UILabel!
     
+    @IBOutlet weak var displayLabel: UILabel!
+    private var isFinishedTyping = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,11 +22,17 @@ class ViewController: UIViewController {
         print(sender.currentTitle!)
     }
     
-
+    
     @IBAction func numberButtonPressed(_ sender: UIButton) {
-        print(sender.currentTitle!)
+        if let number = sender.currentTitle {
+            if isFinishedTyping {
+                displayLabel.text = number
+                isFinishedTyping = false
+            } else {
+                displayLabel.text = displayLabel.text! + number
+            }
+        }
     }
     
-
 }
 
