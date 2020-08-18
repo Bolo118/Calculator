@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var displayLabel: UILabel!
     private var isFinishedTyping = true
+    private var isDecimal = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,11 +26,18 @@ class ViewController: UIViewController {
     
     @IBAction func numberButtonPressed(_ sender: UIButton) {
         if let number = sender.currentTitle {
-            if isFinishedTyping {
-                displayLabel.text = number
-                isFinishedTyping = false
-            } else {
+            if number == "." && !isDecimal {
                 displayLabel.text = displayLabel.text! + number
+                isDecimal = true
+            } else if number == "." && isDecimal {
+                return
+            } else {
+                if isFinishedTyping {
+                    displayLabel.text = number
+                    isFinishedTyping = false
+                } else {
+                    displayLabel.text = displayLabel.text! + number
+                }
             }
         }
     }
