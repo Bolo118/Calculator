@@ -13,6 +13,8 @@
 		EC8DC73624EC83C600BFDA5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC8DC73424EC83C600BFDA5C /* Main.storyboard */; };
 		EC8DC73824EC83CB00BFDA5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC8DC73724EC83CB00BFDA5C /* Assets.xcassets */; };
 		EC8DC73B24EC83CB00BFDA5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC8DC73924EC83CB00BFDA5C /* LaunchScreen.storyboard */; };
+		EC8DC74324ECCAD700BFDA5C /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8DC74224ECCAD700BFDA5C /* RoundButton.swift */; };
+		EC8DC74524ECD20B00BFDA5C /* CalculatorLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8DC74424ECD20B00BFDA5C /* CalculatorLogic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		EC8DC73724EC83CB00BFDA5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC8DC73A24EC83CB00BFDA5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC8DC73C24EC83CB00BFDA5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC8DC74224ECCAD700BFDA5C /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		EC8DC74424ECD20B00BFDA5C /* CalculatorLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorLogic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +62,39 @@
 			children = (
 				EC8DC72E24EC83C600BFDA5C /* AppDelegate.swift */,
 				EC8DC73024EC83C600BFDA5C /* SceneDelegate.swift */,
-				EC8DC73224EC83C600BFDA5C /* ViewController.swift */,
-				EC8DC73424EC83C600BFDA5C /* Main.storyboard */,
 				EC8DC73724EC83CB00BFDA5C /* Assets.xcassets */,
 				EC8DC73924EC83CB00BFDA5C /* LaunchScreen.storyboard */,
 				EC8DC73C24EC83CB00BFDA5C /* Info.plist */,
+				EC8DC74224ECCAD700BFDA5C /* RoundButton.swift */,
+				EC8DC74724ECD23100BFDA5C /* Model */,
+				EC8DC74624ECD22500BFDA5C /* View */,
+				EC8DC74824ECD23900BFDA5C /* Controller */,
 			);
 			path = Calculator;
+			sourceTree = "<group>";
+		};
+		EC8DC74624ECD22500BFDA5C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EC8DC73424EC83C600BFDA5C /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EC8DC74724ECD23100BFDA5C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EC8DC74424ECD20B00BFDA5C /* CalculatorLogic.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EC8DC74824ECD23900BFDA5C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EC8DC73224EC83C600BFDA5C /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +168,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC8DC74324ECCAD700BFDA5C /* RoundButton.swift in Sources */,
 				EC8DC73324EC83C600BFDA5C /* ViewController.swift in Sources */,
+				EC8DC74524ECD20B00BFDA5C /* CalculatorLogic.swift in Sources */,
 				EC8DC72F24EC83C600BFDA5C /* AppDelegate.swift in Sources */,
 				EC8DC73124EC83C600BFDA5C /* SceneDelegate.swift in Sources */,
 			);
