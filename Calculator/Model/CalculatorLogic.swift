@@ -16,10 +16,6 @@ struct CalculatorLogic {
     private var numbers = 0.0
     private var symbol = ""
     
-    let numberFormatter = NumberFormatter()
-//    numberFormatter.numberStyle = .decimal
-//    let formattedNumber = numberFormatter.string(from: NSNumber(value:largeNumber))
-    
     mutating func resetNumber() {
         label.text = "0"
         isFinishedTyping = true
